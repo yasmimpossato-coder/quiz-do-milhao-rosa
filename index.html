@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e83e9b">
+  <title>Quiz do Milhão Rosa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="fundo-decorativo decoracao-1"></div>
+  <div class="fundo-decorativo decoracao-2"></div>
+  <main class="jogo">
+    <header class="topo">
+      <div class="marca">✦ DESAFIO DO CONHECIMENTO ✦</div>
+      <h1>QUIZ DO <span>MILHÃO</span></h1>
+      <p id="categoria">Ensino Médio • Conhecimentos variados</p>
+    </header>
+
+    <section id="inicio" class="tela-inicio">
+      <div class="inicio-icone">🌸</div>
+      <h2>Vamos jogar?</h2>
+      <p>Escolha seu nome de jogador para entrar no desafio e aparecer no pódio.</p>
+      <form id="form-nome" class="form-nome">
+        <label for="nome-usuario">Nome de usuário</label>
+        <input id="nome-usuario" name="nome" maxlength="20" placeholder="Ex.: EstrelaRosa" autocomplete="nickname" required>
+        <button class="botao-proxima" type="submit">Começar o quiz <span>→</span></button>
+      </form>
+      <button id="abrir-podio-inicio" class="botao-podio">🏆 Conferir pódio</button>
+    </section>
+
+    <section id="painel-jogo" class="painel" hidden>
+      <div class="barra-superior-jogo">
+        <div class="jogador-atual">🌷 Jogador: <strong id="jogador-atual">—</strong></div>
+        <button id="abrir-podio" class="botao-podio pequeno">🏆 Ver pódio</button>
+      </div>
+      <div class="status">
+        <div class="status-item"><span class="status-icone">❔</span><div><small>PERGUNTA</small><strong id="numero-pergunta">1 de 50</strong></div></div>
+        <div class="status-item dinheiro"><span class="status-icone">💎</span><div><small>PRÊMIO ATUAL</small><strong id="premio">R$ 0</strong></div></div>
+      </div>
+
+      <div class="progresso"><div id="barra-progresso"></div></div>
+
+      <div class="pergunta-area">
+        <span class="etiqueta" id="etiqueta-categoria">Conhecimentos gerais</span>
+        <h2 id="pergunta">Preparando o desafio...</h2>
+      </div>
+      <div id="alternativas" class="alternativas"></div>
+      <p id="mensagem" class="mensagem" aria-live="polite"></p>
+
+      <div class="ajudas">
+        <button id="dobrar" class="ajuda" title="Dobra o prêmio conquistado até agora">💖 Dobrar dinheiro</button>
+        <button id="pular" class="ajuda">⏭ Pular pergunta</button>
+        <button id="eliminar" class="ajuda">✂️ Excluir duas</button>
+        <button id="manter" class="ajuda ajuda-secundaria">🏦 Desistir e manter</button>
+      </div>
+      <button id="proxima" class="botao-proxima" disabled>Confirmar e continuar <span>→</span></button>
+      <p class="rodape">Cada resposta correta vale <strong>R$ 20.000</strong> • Use suas ajudas com estratégia!</p>
+    </section>
+    <footer>Feito para aprender, jogar e brilhar <span>♥</span></footer>
+
+  <div id="modal-podio" class="modal-podio" hidden>
+    <div class="podio-cartao" role="dialog" aria-modal="true" aria-labelledby="titulo-podio">
+      <button id="fechar-podio" class="fechar-podio" aria-label="Fechar pódio">×</button>
+      <div class="inicio-icone">🏆</div>
+      <h2 id="titulo-podio">Pódio dos campeões</h2>
+      <p class="podio-subtitulo">Melhores pontuações salvas neste navegador</p>
+      <div id="lista-podio" class="lista-podio"></div>
+      <button id="limpar-podio" class="botao-limpar">Limpar pódio</button>
+    </div>
+  </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
